@@ -1,17 +1,15 @@
-function quickSort(arr){
+function quickSort(input){
   
-  if (arr.length <= 1) return arr;
+  const length = input.length;
+  if (length <= 1) return input;
 
-  const pivot = arr[arr.length - 1];
+  const pivot = input[0];
   const left = [];
   const right = [];
 
-  for (let i = 0; i < arr.length - 1; i++){
-    if (arr[i] < pivot){
-      left.push(arr[i]);
-    } else {
-      right.push(arr[i]);
-    }
+  for (let i = 1; i < length; i++){
+    (input[i] < pivot) ? left.push(input[i]) : right.push(input[i]);
   }
   return [...quickSort(left), pivot, ...quickSort(right)];
-} // end.
+} 
+// end.
