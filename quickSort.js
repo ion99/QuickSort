@@ -1,7 +1,7 @@
-function quickSort(input){
+const quickSort = input => {
   
   const length = input.length;
-  if (length <= 1) return input;
+  if (length < 2) return input;
 
   const pivot = input[0];
   const left = [];
